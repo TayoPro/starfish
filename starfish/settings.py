@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'capapp.context_processor.cartread',
                 'capapp.context_processor.dropdown',
-                # 'capapp.context_processor.banner',
+                'capapp.context_processor.banner',
             ],
         },
     },
