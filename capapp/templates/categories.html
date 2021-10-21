@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+    All Categories
+{% endblock title %}
+
+
+
+{% block content %}
+<!-- content section  -->
+<div class="container-fluid mt-5 mb-5">
+    <h1>All Categories</h1>
+    <div class="row">
+        {% if categories %} 
+            {% for item in categories %}
+                <!-- box1  -->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 mt-2 mb-2 w-25">
+                    <div class="card w-100 text-center pt-3">
+                        <a href="{% url 'category' item.id %}"><img src="{{item.image.url}}" class="card-img-top w-100"></a>
+                        <div class="card-body mt-3">
+                            <a href="{% url 'category' item.id %}"><h5 class="card-title">{{item.title}}</h5></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- box1 done -->
+            {% endfor %} 
+        {% endif %}
+    </div>
+</div>
+<!-- content section done -->
+
+
+
+
+
+
+
+
+    
+{% endblock content %}
+    
+    
+
+

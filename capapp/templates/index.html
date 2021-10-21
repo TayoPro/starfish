@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block banner %} {% include "banner.html" %}{% endblock banner %}
+
+{% block content %}
+
+<!-- content section  -->
+<div class="container-fluid">
+    <!-- child 1 container  -->
+    <div class="container-fluid mt-5 mb-5">
+        <h1>Featured Products</h1>
+        <div class="row">
+            {% if featured %} 
+                {% for item in featured %}
+                    <!-- box1  -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 mt-2 mb-2 w-25">
+                        <div class="card w-100 text-center pt-3">
+                            <img src="{{item.image.url}}" class="card-img-top w-100">
+                            <div class="card-body mt-3">
+                                <h5 class="card-title">{{item.name}}</h5>
+                                <p class="card-text">$ {{item.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                <!-- box1 done -->
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <!-- end of child 1 container  -->
+    <!-- child 2 container  -->
+    <div class="container-fluid mt-5 mb-5">
+        <h1>Latest Products</h1>
+        <div class="row">
+            {% if latest %} 
+            {% for item in latest %}
+            <!-- box1  -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mt-2 mb-2 w-25">
+                <div class="card w-100 text-center pt-3">
+                    <a href=""><img src="{{item.image.url}}" class="card-img-top w-100"></a>
+                    <div class="card-body mt-3">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">$ {{item.price}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- box1 done -->
+            {% endfor %} {% endif %}
+        </div>
+    </div>
+    <!-- end of child 2 container  -->
+</div>
+<!-- parent container-fluid  -->
+<!-- content section done -->
+
+
+
+{% endblock content %}

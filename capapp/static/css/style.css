@@ -1,0 +1,57 @@
+.navbar {
+    background: lightpink;
+}
+
+#navbarSupportedContent a {
+    float: right;
+}
+
+.team {
+    background: lightpink;
+    color: white;
+    font-weight: bolder;
+}
+
+.lis a {
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* banner styled  */
+
+.carousel-item img {
+    margin: auto;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.carousel-caption h5 {
+    color: lightsalmon;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+.carousel-caption p {
+    color: hotpink;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+
+/* completed page  */
+.myuser h2{
+    color: crimson;
+}
+.myuser h3{
+    color: seagreen;
+}
+.myuser h4{
+    color: yellowgreen;
+}
+/* completed page done */

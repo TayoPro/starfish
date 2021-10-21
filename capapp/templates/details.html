@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}
+    Product Detail
+{% endblock title %}
+    
+
+
+{% block content %}
+     <!-- child 1 container  -->
+     <div class="container-fluid mt-5 mb-5">
+        <h1>Product Detail</h1>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mt-2 mb-2 w-50"></div>
+            <!-- box1  -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-2 mb-2 w-50">
+                <div class="card w-100 text-center pt-3">
+                    <img src="{{detail.image.url}}" class="card-img-top w-100">
+                    <div class="card-body mt-3">
+                        <h5 class="card-title">Product: {{detail.name}}</h5>
+                        <h5 class="card-title">Category: {{detail.category}}</h5>
+                        <p class="card-text">$ {{detail.price}}</p>
+                        <p class="card-text">{{detail.description}}</p>
+                    </div>
+                    <form style="width: 400px;" method="POST" action="{% url 'addtocart' %}">    
+                    {% csrf_token %}
+                        <input type="number" name="quantity" value="1" min="{{detail.min}}" max="{{detail.max}}" style="width: 50px;">
+                        <input type="hidden" name="itemid" value="{{detail.id}}">
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+            <!-- box1 done -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 mt-2 mb-2 w-50"></div>
+         </div>
+    </div>
+    <!-- end of child 1 container  -->
+{% endblock content %}
+    
